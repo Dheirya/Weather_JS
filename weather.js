@@ -12,6 +12,7 @@ if (navigator.cookieEnabled) {
     }
     $(document).ready(function(){
      var temp;
+     if (getCookie("fail") != "true"){
       if (getCookie("city") === null || getCookie("temp") === null || getCookie("humidity") === null || getCookie("wind") === null) {
           $.getJSON('https://extreme-ip-lookup.com/json', function(d){
             var lat = d.lat;
@@ -31,7 +32,7 @@ if (navigator.cookieEnabled) {
               setCookie("humidity", humidity, 0.75);
               setCookie("wind", wind, 0.75);
             });
-          });
+          }).fail(function() {$(".nord").hide();$(".widgetw").hide();setCookie("fail", "true", 0.75);});
       }else{
         city = getCookie("city");
         temp = getCookie("temp") + " C&#176;";
@@ -41,6 +42,9 @@ if (navigator.cookieEnabled) {
         $('.temperature').html(temp);
         $('.prepnum').html(humidity);
         $('.windnum').html(wind);
+      }
+      }else{
+            $(".nord").hide();$(".widgetw").hide();
       }
     });
 } else {
