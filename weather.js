@@ -18,11 +18,11 @@ if (navigator.cookieEnabled) {
             var lat = d.lat;
             var lon = d.lon;
             var city = d.city;
-            let freeCodeUrl = 'https://fcc-weather-api.glitch.me/api/current?lat=' + lat +'&lon=' + lon;
+            let freeCodeUrl = 'https://api.weatherapi.com/v1/current.json?key=6964dff868fc40bba98142630212812&q=' + lat +',' + lon;
             $.getJSON(freeCodeUrl, function(data) {
-              temp = data.main.temp;
-              var humidity = data.main.humidity;
-              var wind = data.wind.speed;
+              temp = data.current.temp_f;
+              var humidity = data.current.humidity;
+              var wind = data.current.wind_mph;
               $('.summaryTex').html(city);
               $('.temperature').html(Math.round(temp)).append(" C&#176;");
               $('.prepnum').html(humidity);
