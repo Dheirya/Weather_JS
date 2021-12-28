@@ -35,7 +35,7 @@ if (navigator.cookieEnabled) {
           }).fail(function() {$(".nord").hide();$(".widgetw").hide();setCookie("fail", "true", 0.75);});
       }else{
         city = getCookie("city");
-        temp = getCookie("temp") + " C&#176;";
+        temp = getCookie("temp") + " F&#176;";
         humidity = getCookie("humidity");
         wind = getCookie("wind");
         $('.summaryTex').html(city);
