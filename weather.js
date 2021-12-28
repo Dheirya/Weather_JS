@@ -14,7 +14,7 @@ if (navigator.cookieEnabled) {
      var temp;
      if (getCookie("fail") != "true"){
       if (getCookie("city") === null || getCookie("temp") === null || getCookie("humidity") === null || getCookie("wind") === null) {
-          $.getJSON('https://extreme-ip-lookup.com/json', function(d){
+          $.getJSON('https://pro.ip-api.com/json?key=pAcPOWCUJWo5Gcp', function(d){
             var lat = d.lat;
             var lon = d.lon;
             var city = d.city;
