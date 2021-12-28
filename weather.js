@@ -24,7 +24,7 @@ if (navigator.cookieEnabled) {
               var humidity = data.current.humidity;
               var wind = data.current.wind_mph;
               $('.summaryTex').html(city);
-              $('.temperature').html(Math.round(temp)).append(" C&#176;");
+              $('.temperature').html(Math.round(temp)).append(" F&#176;");
               $('.prepnum').html(humidity);
               $('.windnum').html(wind);
               setCookie("city", city, 0.75);
